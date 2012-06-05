@@ -82,6 +82,8 @@ run_main() {
 	### remove the following command since CC2DX 0.13
 	#update_jni
 	setup_eclipse_project
+
+	echo "=== Complete ==="
 }
 
 run_main
