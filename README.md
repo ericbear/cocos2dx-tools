@@ -3,12 +3,24 @@ cocos2dx-tools
 useful tools for cocos2d-x
 
 
-add android into existing ios project (XCode 4.X)
-- copy 3 files (add_android_into_ios_project.sh, classpath.dat & project.dat) into your ios project 
+add android project into existing ios project (XCode 4.X)
+- copy all files to your project folder which is same as xcode project file
 - run the script "add_android_into_ios_project.sh"
 	- make sure that "COCOS2DX_ROOT", "NDK_ROOT" & "ANDROID_SDK_ROOT" are defined on your environment
 - the procedure should be as same as COCOS2DX "create_android_project.sh" except one more prompt "Input the project name:"
 - for android native code compile, pls run the script "build_native.sh" under android folter.
+
+add linux project into existing project
+- copy all files into the directory which is as same as your project level
+- run the script "add_linux_into_project.sh"
+	- make sure that "COCOS2DX_ROOT", "NDK_ROOT" & "ANDROID_SDK_ROOT" are defined on your environment
+- the procedure will compile the cocos2dx library
+- import the project into eclipse under "linux" sub-folder
+
+2012-06-08:
+- update the file structure
+- add the creation script for linux platform
+	- using eclipse as IDE on linux
 
 2012-06-05:
 - update the script to support CC2DX 0.13

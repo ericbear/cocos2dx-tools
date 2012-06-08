@@ -49,27 +49,26 @@ update_lib_reference() {
 update_build_native() {
 	FILE=$CURRENT_PROJECT/android/build_native.sh
 
-	sed '2s/.*//' $FILE > $FILE.tmp
-	mv $FILE.tmp $FILE
-	sed '3s/.*//' $FILE > $FILE.tmp
-	mv $FILE.tmp $FILE
-	sed '4s/.*/GAME_ROOT=..\//' $FILE > $FILE.tmp
-	mv $FILE.tmp $FILE
-	sed '5s/.*/GAME_ANDROID_ROOT=./' $FILE > $FILE.tmp
-	mv $FILE.tmp $FILE
+	sed '2s/.*//' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
+	sed '3s/.*//' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
+	sed '4s/.*/GAME_ROOT=..\//' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
+	sed '5s/.*/GAME_ANDROID_ROOT=./' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
 }
 
 update_jni() {
 	FILE=$CURRENT_PROJECT/android/jni/Android.mk
 
-	sed 's/\/..\/..\/..\//\/..\/..\/libs\//' $FILE > $FILE.tmp
-	mv $FILE.tmp $FILE
+	sed 's/\/..\/..\/..\//\/..\/..\/libs\//' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
 }
 
 setup_eclipse_project() {
-	cp classpath.dat $CURRENT_PROJECT/android/.classpath
-	sed "s/project_name/$PROJECT_NAME/" project.dat > .project
-	mv .project $CURRENT_PROJECT/android/.project
+	cp dat/android/.classpath $CURRENT_PROJECT/android/.classpath
+	sed "s/project_name/$PROJECT_NAME/" dat/android/.project > $CURRENT_PROJECT/android/.project
 }
 
 run_main() {
