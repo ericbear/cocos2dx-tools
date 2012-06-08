@@ -31,27 +31,27 @@ update_setting() {
 	#update Makefile
 	echo "update Makefile"
 	_FILE_=$CURRENT_PROJECT/linux/Makefile
-	sed -i "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
+	sed  "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	sed -i "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
+	sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
 
 	#update .project
 	echo "update .project"
 	_FILE_=$CURRENT_PROJECT/linux/.project
-	sed -i "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
+	sed  "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	sed -i "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
+	sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
 
 	#update .cproject
 	echo "update .cproject"
 	_FILE_=$CURRENT_PROJECT/linux/.cproject
-	sed -i "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
+	sed  "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	sed -i "s#CURRENT_PROJECT_DIR#$CURRENT_PROJECT#" $_FILE_ > $_FILE_.bak
+	sed  "s#CURRENT_PROJECT_DIR#$CURRENT_PROJECT#" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	sed -i "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
+	sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
 }
 
