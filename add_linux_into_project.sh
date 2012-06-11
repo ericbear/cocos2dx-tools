@@ -22,7 +22,7 @@ check_env() {
 copy_project_to_current_dir() {
 	echo "Input the project name:"
 	read PROJECT_NAME
-	CURRENT_PROJECT=$CURRENT_DIR/$PROJECT_NAME
+	CURRENT_PROJECT=$CURRENT_DIR
 	rm -rf $CURRENT_PROJECT/linux
 	cp -rf dat/linux $CURRENT_PROJECT
 }

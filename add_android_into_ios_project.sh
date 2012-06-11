@@ -29,7 +29,7 @@ copy_project_to_current_dir() {
 	echo "Input the project name:"
 	read PROJECT_NAME
 	COCOS2DX_PROJECT=$COCOS2DX_ROOT/$PROJECT_NAME
-	CURRENT_PROJECT=$CURRENT_DIR/$PROJECT_NAME
+	CURRENT_PROJECT=$CURRENT_DIR
 	rm -rf $CURRENT_PROJECT/android
 	mv $COCOS2DX_PROJECT/android $CURRENT_PROJECT
 	### remove the following command since CC2DX 0.13
@@ -74,7 +74,11 @@ setup_eclipse_project() {
 run_main() {
 	save_current_dir
 	check_env
-	create_android_project
+	if [ ${PARAMS[0]} = "-standalone" ]; then
+		echo "run as standalone"
+	else
+		create_android_project
+	fi	
 	copy_project_to_current_dir
 	update_lib_reference
 	update_build_native
@@ -84,5 +88,7 @@ run_main() {
 
 	echo "=== Complete ==="
 }
+
+PARAMS=$@
 
 run_main
