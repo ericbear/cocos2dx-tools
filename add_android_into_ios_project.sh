@@ -25,11 +25,14 @@ create_android_project() {
 	cd $CURRENT_DIR
 }
 
-copy_project_to_current_dir() {
+input_project_name() {
 	echo "Input the project name:"
 	read PROJECT_NAME
 	COCOS2DX_PROJECT=$COCOS2DX_ROOT/$PROJECT_NAME
 	CURRENT_PROJECT=$CURRENT_DIR
+}
+
+copy_project_to_current_dir() {
 	rm -rf $CURRENT_PROJECT/android
 	mv $COCOS2DX_PROJECT/android $CURRENT_PROJECT
 	### remove the following command since CC2DX 0.13
@@ -78,8 +81,9 @@ run_main() {
 		echo "run as standalone"
 	else
 		create_android_project
+		copy_project_to_current_dir
 	fi	
-	copy_project_to_current_dir
+	input_project_name
 	update_lib_reference
 	update_build_native
 	### remove the following command since CC2DX 0.13

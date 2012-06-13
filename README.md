@@ -39,6 +39,9 @@ standard project folder structure:
 - modify the android and linux script for the above changes
 - the scripts should be executed under the project folder
 
+2012-06-13:
+- fix a bug for removing android folder during execute the script for linux
+
 2012-06-08:
 - update the file structure
 - add the creation script for linux platform
