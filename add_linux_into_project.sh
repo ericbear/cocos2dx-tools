@@ -62,15 +62,25 @@ fix_build_linux() {
 	ln -s $FMOD_DIR/libfmodex-* $FMOD_DIR/libfmodex.so
 	ln -s $FMOD_DIR/libfmodexL-* $FMOD_DIR/libfmodexL.so
 	FMOD_DIR=$COCOS2DX_ROOT/CocosDenshion/third_party/linux/fmod/lib64/api/lib
-	rm -rf $FMOD_DIR/libfmodex.so
-        rm -rf $FMOD_DIR/libfmodexL.so
-        ln -s $FMOD_DIR/libfmodex-* $FMOD_DIR/libfmodex.so
-        ln -s $FMOD_DIR/libfmodexL-* $FMOD_DIR/libfmodexL.so
+	rm -rf $FMOD_DIR/libfmodex64.so
+        rm -rf $FMOD_DIR/libfmodexL64.so
+        ln -s $FMOD_DIR/libfmodex64-* $FMOD_DIR/libfmodex64.so
+        ln -s $FMOD_DIR/libfmodexL64-* $FMOD_DIR/libfmodexL64.so
 }
 
 build_linux() {
 	cd $COCOS2DX_ROOT
 	sh ./build-linux.sh
+	FMOD_DIR=$COCOS2DX_ROOT/CocosDenshion/third_party/linux/fmod/api/lib/
+	cp -R $FMOD_DIR/libfmodex.so lib/linux/Debug
+	cp -R $FMOD_DIR/libfmodex.so lib/linux/Release
+	cp -R $FMOD_DIR/libfmodexL.so lib/linux/Debug
+	cp -R $FMOD_DIR/libfmodexL.so lib/linux/Release
+	FMOD_DIR=$COCOS2DX_ROOT/CocosDenshion/third_party/linux/fmod/lib64/api/lib
+	cp -R $FMOD_DIR/libfmodex64.so lib/linux/Debug
+	cp -R $FMOD_DIR/libfmodex64.so lib/linux/Release
+	cp -R $FMOD_DIR/libfmodexL64.so lib/linux/Debug
+	cp -R $FMOD_DIR/libfmodexL64.so lib/linux/Release
 	cd $CURRENT_DIR
 }
 
