@@ -71,7 +71,7 @@ update_jni() {
 
 setup_eclipse_project() {
 	cp dat/android/.classpath $CURRENT_PROJECT/android/.classpath
-	sed "s/project_name/$\{PROJECT_NAME\}_android/" dat/android/.project > $CURRENT_PROJECT/android/.project
+	sed "s/project_name/$PROJECT_NAME\_android/" dat/android/.project > $CURRENT_PROJECT/android/.project
 }
 
 modify_android_mk() {
@@ -79,7 +79,7 @@ modify_android_mk() {
 
 	sed "s#.*cpp.*##" $FILE > $FILE.bak
 	mv $FILE.bak $FILE
-	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''LOCAL_SRC_FILES := helloworld/main.cpp\'$'\n''MY_FILES := $(wildcard $(LOCAL_PATH)/../../Classes/*.c)\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
+	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''LOCAL_SRC_FILES := helloworld/main.cpp\'$'\n''MY_FILES := $(wildcard $(LOCAL_PATH)/../../Classes/*.cpp)\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
 	mv $FILE.bak $FILE
 }
 
