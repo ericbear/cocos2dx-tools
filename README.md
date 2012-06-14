@@ -36,6 +36,7 @@ standard project folder structure:
 2012-06-14:
 - modify the Makefile to include all *.o
 - modify the android/jni/Android.mk to include all *.cpp
+- using shell script to find all cpp
 
 2012-06-13:
 - fix a bug for removing android folder during execute the script for linux
