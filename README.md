@@ -33,6 +33,9 @@ add linux project into existing project
 standard project folder structure:
 - ![folder structure](https://dl.dropbox.com/u/41312550/cocos2dx_project_folder.png)
 
+2012-06-14:
+- modify the Makefile to include all *.o
+
 2012-06-13:
 - fix a bug for removing android folder during execute the script for linux
 - fix a bug for wrong fmod linkage
