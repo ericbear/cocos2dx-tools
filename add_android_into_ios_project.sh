@@ -79,11 +79,12 @@ run_main() {
 	check_env
 	if [ ${PARAMS[0]} = "-standalone" ]; then
 		echo "run as standalone"
+		input_project_name
 	else
 		create_android_project
+		input_project_name
 		copy_project_to_current_dir
 	fi	
-	input_project_name
 	update_lib_reference
 	update_build_native
 	### remove the following command since CC2DX 0.13
