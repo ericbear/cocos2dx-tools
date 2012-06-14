@@ -79,7 +79,7 @@ modify_android_mk() {
 
 	sed "s#.*cpp.*##" $FILE > $FILE.bak
 	mv $FILE.bak $FILE
-	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''MY_FILES := $(wildcard $(LOCAL_PATH)/foo/*.c)\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
+	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''MY_FILES := $(wildcard $(LOCAL_PATH)/../../Classes/*.c)\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
 	mv $FILE.bak $FILE
 }
 
