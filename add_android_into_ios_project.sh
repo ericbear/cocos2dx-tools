@@ -74,6 +74,15 @@ setup_eclipse_project() {
 	sed "s/project_name/$PROJECT_NAME/" dat/android/.project > $CURRENT_PROJECT/android/.project
 }
 
+modify_android_mk() {
+	FILE=$CURRENT_PROJECT/android/jni/Android.mk
+
+	sed "s#.*cpp.*##" $FILE > $FILE.bak
+	mv $FILE.bak $FILE
+	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''MY_FILES := $(wildcard $(LOCAL_PATH)/foo/*.c)\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
+}
+
 run_main() {
 	save_current_dir
 	check_env
@@ -90,6 +99,7 @@ run_main() {
 	### remove the following command since CC2DX 0.13
 	#update_jni
 	setup_eclipse_project
+	modify_android_mk
 
 	echo "=== Complete ==="
 }
