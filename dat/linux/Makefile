@@ -17,7 +17,7 @@ INCLUDES = -I$(COCOS2DX_ROOT)/cocos2dx/platform/third_party/linux \
 DEFINES = -DLINUX
 
 OBJECTS = ./main.o \
-        $(patsubst %.cpp,%.o,$(wildcard ../Classes/*.cpp))
+        $(patsubst %.cpp,%.o,$(wildcard $(shell find ../Classes -type f -name '*.cpp')))
 
 STATICLIBS =  
 SHAREDLIBS = -L$(COCOS2DX_ROOT)/lib/linux/Debug -lcocos2d -lrt -lz -lcocosdenshion -Wl,-rpath,$(COCOS2DX_ROOT)/lib/linux/Debug/
