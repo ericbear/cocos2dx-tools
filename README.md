@@ -32,14 +32,19 @@ add linux project into existing project
 
 create a test project for android
 - setup a android project first
-- copy all file to your project folder which is as same as android folder
+- copy all files to your project folder which is as same as android folder
 - run the script "setup_android_project.sh" with "-android" as argument
+
+create a test project for linux
+- setup a linux project first
+- copy all files to your project folder which is as same as linux folder
+- run the script "setup_android_project.sh" with "-linux" as argument
 
 standard project folder structure:
 - ![folder structure](https://dl.dropbox.com/u/41312550/cocos2dx_project_folder.png)
 
 2012-06-15:
-- add a script to create test project
+- add a script to create test project for android and linux
 - fix some issues for linux platform
 
 2012-06-14:
