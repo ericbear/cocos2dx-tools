@@ -49,10 +49,10 @@ update_setting() {
 	_FILE_=$CURRENT_PROJECT/linux/.cproject
 	sed  "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	sed  "s#CURRENT_PROJECT_DIR#$CURRENT_PROJECT#" $_FILE_ > $_FILE_.bak
-	mv $_FILE_.bak $_FILE_
-	sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
-	mv $_FILE_.bak $_FILE_
+	#sed  "s#CURRENT_PROJECT_DIR#$CURRENT_PROJECT#" $_FILE_ > $_FILE_.bak
+	#mv $_FILE_.bak $_FILE_
+	#sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
+	#mv $_FILE_.bak $_FILE_
 }
 
 fix_build_linux() {

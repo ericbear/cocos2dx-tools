@@ -39,7 +39,7 @@ update_android_makefile() {
 
 update_linux_makefile() {
 	FILE=linux/Makefile
-	sed 's#STATICLIBS*.#STATICLIBS = ${COCOS2DX_ROOT}/lib/linux/Debug/libbox2d.a ${COCOS2DX_ROOT}/lib/linux/Debug/libchipmunk.a ${COCOS2DX_ROOT}/cocos2dx/platform/third_party/linux/libraries/libcurl.a#' $FILE > $FILE.bak
+	sed 's#STATICLIBS =.*#STATICLIBS = ${COCOS2DX_ROOT}/lib/linux/Debug/libbox2d.a ${COCOS2DX_ROOT}/lib/linux/Debug/libchipmunk.a ${COCOS2DX_ROOT}/cocos2dx/platform/third_party/linux/libraries/libcurl.a#' $FILE > $FILE.bak
 	mv $FILE.bak $FILE
 }
 
