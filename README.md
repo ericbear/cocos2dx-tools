@@ -30,8 +30,17 @@ add linux project into existing project
 - the procedure will compile the cocos2dx library
 - import the project into eclipse under "linux" sub-folder
 
+create a test project for android
+- setup a android project first
+- copy all file to your project folder which is as same as android folder
+- run the script "setup_android_project.sh" with "-android" as argument
+
 standard project folder structure:
 - ![folder structure](https://dl.dropbox.com/u/41312550/cocos2dx_project_folder.png)
+
+2012-06-15:
+- add a script to create test project
+- fix some issues for linux platform
 
 2012-06-14:
 - modify the Makefile to include all *.o

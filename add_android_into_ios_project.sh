@@ -5,15 +5,15 @@ save_current_dir() {
 }
 
 check_env() {
-	if [ $COCOS2DX_ROOT"xxx" == "xxx" ]; then
+	if [ $COCOS2DX_ROOT"xxx" = "xxx" ]; then
 		echo "pls set COCOS2DX_ROOT on your env"
 		exit
 	fi
-	if [ $NDK_ROOT"xxx" == "xxx" ]; then
+	if [ $NDK_ROOT"xxx" = "xxx" ]; then
 		echo "pls set NDK_ROOT on your env"
 		exit
 	fi
-	if [ $ANDROID_SDK_ROOT"xxx" == "xxx" ]; then
+	if [ $ANDROID_SDK_ROOT"xxx" = "xxx" ]; then
 		echo "pls set ANDROID_SDK_ROOT on your env"
 		exit
 	fi
@@ -72,6 +72,7 @@ update_jni() {
 setup_eclipse_project() {
 	cp dat/android/.classpath $CURRENT_PROJECT/android/.classpath
 	sed "s/project_name/$PROJECT_NAME\_android/" dat/android/.project > $CURRENT_PROJECT/android/.project
+	cp dat/android/Makefile $CURRENT_PROJECT/android
 }
 
 modify_android_mk() {
@@ -79,7 +80,7 @@ modify_android_mk() {
 
 	sed "s#.*cpp.*##" $FILE > $FILE.bak
 	mv $FILE.bak $FILE
-	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''LOCAL_SRC_FILES := helloworld/main.cpp\'$'\n''MY_FILES := $(wildcard $(shell find $(LOCAL_PATH/../../Classes -type -f -name '*.cpp')))\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
+	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''LOCAL_SRC_FILES := helloworld/main.cpp\'$'\n''MY_FILES := $(wildcard $(shell find $(LOCAL_PATH)/../../Classes -type f -name '*.cpp'))\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
 	mv $FILE.bak $FILE
 }
 
@@ -100,7 +101,7 @@ run_main() {
 	#update_jni
 	setup_eclipse_project
 	modify_android_mk
-
+	
 	echo "=== Complete ==="
 }
 
