@@ -45,6 +45,7 @@ standard project folder structure:
 
 2012-06-18:
 - reconstruct the folder structure
+- add a patch to fix a issue for #1115
 
 2012-06-15:
 - add a script to create test project for android and linux
