@@ -43,6 +43,10 @@ create a test project for linux
 standard project folder structure:
 - ![folder structure](https://dl.dropbox.com/u/41312550/cocos2dx_project_folder.png)
 
+update the patch
+- cc2dx_013_patch.sh
+	- fix a issue for #1115 on 0.13
+
 2012-06-18:
 - reconstruct the folder structure
 - add a patch to fix a issue for #1115
