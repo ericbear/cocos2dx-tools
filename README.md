@@ -8,7 +8,7 @@ modify the iOS project structure
 	- make sure that "COCOS2DX_ROOT" is defined on your environment
 
 modify the android project structure from existing one
-- execute the creation script under cocos2dx folder
+- extract the creation script("setup_project") under cocos2dx folder
 - after that copy your project from cocos2dx folder to your workspace
 - copy all files to your project folder which directory constain "android" folder
 - run the script "setup_android_project.sh"
@@ -16,7 +16,7 @@ modify the android project structure from existing one
 - import the project into eclipse under "android" sub-folder
 
 add android project into existing ios project (XCode 4.X)
-- copy all files to your project folder which is same as xcode project file
+- extract the creation script("setup_project") to your project folder which is same as xcode project file
 - run the script "add_android_into_ios_project.sh"
 	- make sure that "COCOS2DX_ROOT", "NDK_ROOT" & "ANDROID_SDK_ROOT" are defined on your environment
 - the procedure should be as same as COCOS2DX "create_android_project.sh" except one more prompt "Input the project name:"
@@ -24,7 +24,7 @@ add android project into existing ios project (XCode 4.X)
 - import the project into eclipse under "android" sub-folder
 
 add linux project into existing project
-- copy all files into the directory which is as same as your project level
+- extract the creation script("setup_project") into the directory which is as same as your project level
 - run the script "add_linux_into_project.sh"
 	- make sure that "COCOS2DX_ROOT", "NDK_ROOT" & "ANDROID_SDK_ROOT" are defined on your environment
 - the procedure will compile the cocos2dx library
@@ -32,16 +32,19 @@ add linux project into existing project
 
 create a test project for android
 - setup a android project first
-- copy all files to your project folder which is as same as android folder
+- extract the creation script("setup_project") to your project folder which is as same as android folder
 - run the script "setup_android_project.sh" with "-android" as argument
 
 create a test project for linux
 - setup a linux project first
-- copy all files to your project folder which is as same as linux folder
+- extract the creation script("setup_project") to your project folder which is as same as linux folder
 - run the script "setup_android_project.sh" with "-linux" as argument
 
 standard project folder structure:
 - ![folder structure](https://dl.dropbox.com/u/41312550/cocos2dx_project_folder.png)
+
+2012-06-18:
+- reconstruct the folder structure
 
 2012-06-15:
 - add a script to create test project for android and linux
