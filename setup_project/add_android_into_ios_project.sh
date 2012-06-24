@@ -78,9 +78,14 @@ setup_eclipse_project() {
 modify_android_mk() {
 	FILE=$CURRENT_PROJECT/android/jni/Android.mk
 
+	#modify LOCAL_SRC_FILES
 	sed "s#.*cpp.*##" $FILE > $FILE.bak
 	mv $FILE.bak $FILE
 	sed 's#LOCAL_MODULE_FILENAME := libgame#&\'$'\n''LOCAL_SRC_FILES := helloworld/main.cpp\'$'\n''MY_FILES := $(wildcard $(shell find $(LOCAL_PATH)/../../Classes -type f -name '*.cpp'))\'$'\n''MY_FILES := $(MY_FILES:$(LOCAL_PATH)/%=%)\'$'\n''LOCAL_SRC_FILES += $(MY_FILES)\'$'\n''#' $FILE > $FILE.bak
+	mv $FILE.bak $FILE
+
+	#modify LOCAL_C_INCLUDES
+	sed "s#LOCAL_C_INCLUDES := \$(LOCAL_PATH)/../../Classes#LOCAL_C_INCLUDES := \$(shell find \$(LOCAL_PATH)/../../Classes -type d)#" $FILE > $FILE.bak
 	mv $FILE.bak $FILE
 }
 
