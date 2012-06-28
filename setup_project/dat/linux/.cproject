@@ -33,7 +33,7 @@
 									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTest"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt/CppUTestGMock/gmock"/>
-									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt/CppUTestGTest/gmock"/>
+									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt/CppUTestGTest/gtest"/>
 									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx"/>
 									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx/include"/>
 									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx/platform"/>

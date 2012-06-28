@@ -29,7 +29,7 @@ copy_project_to_current_dir() {
 
 	rm -rf $CURRENT_PROJECT/unittests
 	cp -rf dat/unittests $CURRENT_PROJECT
-	tar -xvf $CURRENT_PROJECT/unittests/cpputest.zip -C $CURRENT_PROJECT/unittests
+	unzip $CURRENT_PROJECT/unittests/cpputest.zip -d $CURRENT_PROJECT/unittests
 	rm -rf $CURRENT_PROJECT/unittests/cpputest.zip
 	rm -rf $CURRENT_PROJECT/unittests/__MACOSX
 }
