@@ -5,6 +5,9 @@
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1378309016">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1378309016" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<macros>
+					<stringMacro name="cocos2dx_loc" type="VALUE_TEXT" value="COCOS2DX_LOC_PATH" />
+				</macros>
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
@@ -26,13 +29,17 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.513215504" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.354795965" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.577331571" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="${PROJECT_LOC}/Classes"/>
-									<listOptionValue builtIn="false" value="${COCOS2DX_LOC}/cocos2dx"/>
-									<listOptionValue builtIn="false" value="${COCOS2DX_LOC}/cocos2dx/include"/>
-									<listOptionValue builtIn="false" value="${COCOS2DX_LOC}/cocos2dx/platform"/>
-									<listOptionValue builtIn="false" value="${COCOS2DX_LOC}/cocos2dx/platform/qnx"/>
-									<listOptionValue builtIn="false" value="${COCOS2DX_LOC}/chipmunk/include/chipmunk"/>
-									<listOptionValue builtIn="false" value="${COCOS2DX_LOC}/CocosDenshion/include"/>
+									<listOptionValue builtIn="false" value="${ProjDirPath}/../Classes"/>
+									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTest"/>
+									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt"/>
+									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt/CppUTestGMock/gmock"/>
+									<listOptionValue builtIn="false" value="${ProjDirPath}/../unittests/cpputest/include/CppUTestExt/CppUTestGTest/gmock"/>
+									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx"/>
+									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx/include"/>
+									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx/platform"/>
+									<listOptionValue builtIn="false" value="${cocos2dx_loc}/cocos2dx/platform/qnx"/>
+									<listOptionValue builtIn="false" value="${cocos2dx_loc}/chipmunk/include/chipmunk"/>
+									<listOptionValue builtIn="false" value="${cocos2dx_loc}/CocosDenshion/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.753894218" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="LINUX"/>
@@ -57,7 +64,7 @@
 									<listOptionValue builtIn="false" value="cocosdenshion"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.1730426040" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${COCOS2DX_LOC}/lib/linux/${ConfigName}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${cocos2dx_loc}/lib/linux/${ConfigName}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.338357910" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

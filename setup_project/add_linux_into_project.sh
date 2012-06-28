@@ -23,8 +23,15 @@ copy_project_to_current_dir() {
 	echo "Input the project name:"
 	read PROJECT_NAME
 	CURRENT_PROJECT=$CURRENT_DIR
+	
 	rm -rf $CURRENT_PROJECT/linux
 	cp -rf dat/linux $CURRENT_PROJECT
+
+	rm -rf $CURRENT_PROJECT/unittests
+	cp -rf dat/unittests $CURRENT_PROJECT
+	tar -xvf $CURRENT_PROJECT/unittests/cpputest.zip -C $CURRENT_PROJECT/unittests
+	rm -rf $CURRENT_PROJECT/unittests/cpputest.zip
+	rm -rf $CURRENT_PROJECT/unittests/__MACOSX
 }
 
 update_setting() {
@@ -33,7 +40,7 @@ update_setting() {
 	_FILE_=$CURRENT_PROJECT/linux/Makefile
 	sed  "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
+	sed  "s#.*COCOS2DX_ROOT_DIR.*##" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
 
 	#update .project
@@ -49,10 +56,8 @@ update_setting() {
 	_FILE_=$CURRENT_PROJECT/linux/.cproject
 	sed  "s/PROJECT_NAME/$PROJECT_NAME/" $_FILE_ > $_FILE_.bak
 	mv $_FILE_.bak $_FILE_
-	#sed  "s#CURRENT_PROJECT_DIR#$CURRENT_PROJECT#" $_FILE_ > $_FILE_.bak
-	#mv $_FILE_.bak $_FILE_
-	#sed  "s#COCOS2DX_ROOT_DIR#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
-	#mv $_FILE_.bak $_FILE_
+	sed "s#COCOS2DX_LOC_PATH#$COCOS2DX_ROOT#" $_FILE_ > $_FILE_.bak
+	mv $_FILE_.bak $_FILE_
 }
 
 fix_build_linux() {

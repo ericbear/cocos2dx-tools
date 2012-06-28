@@ -84,6 +84,11 @@
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Classes</locationURI>
 		</link>
+		<link>
+			<name>UnitTests</name>
+			<type>2</type>
+			<locationURI>PARENT-1-PROJECT_LOC/unittests</locationURI>
+		</link>
 	</linkedResources>
 	<variableList>
 		<variable>
