@@ -47,6 +47,9 @@ update the patch
 - cc2dx_013_patch.sh
 	- fix a issue for #1115 on 0.13
 
+2012-07-04
+- add a patch to fix a memory leakage on cocos2dx/platform/ios/CCFileUtils_ios.mm
+
 2012-06-28
 - add the cpputest framework for linux (refer: www.cpputest.org)
 - fix some issues for hardcoded path
